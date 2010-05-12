@@ -1,0 +1,14 @@
+<document>
+  <properties>
+    <title>Changes</title>
+    <author email="niklas@protocol7.com">Niklas Gustavsson</author>
+  </properties>
+  <body>
+
+    <release version="0.1" date="2004-08-02">
+      <action dev="Niklas Gustavsson" type="add">
+        First version
+      </action>              
+    </release>
+  </body>
+</document>

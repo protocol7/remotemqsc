@@ -1,0 +1,45 @@
+<project default="default" xmlns:j="jelly:core" xmlns:ant="jelly:ant">
+
+  <postGoal name="dist:prepare-src-filesystem">
+	<!-- Remove auto-gened build.xml -->
+	<delete file="${maven.dist.src.assembly.dir}/build.xml"/>
+
+    <copy toDir="${maven.dist.src.assembly.dir}">
+      <fileset dir=".">
+        <include name="maven.xml"/>
+        <include name="project.xml"/>
+        <include name="project.properties"/>
+        <include name="readme.txt"/>
+        <include name="remotemqsc.bat"/>
+        <include name="remotemqsc.sh"/>
+        <include name="license.txt"/>
+      </fileset>
+    </copy>
+
+    <copy toDir="${maven.dist.src.assembly.dir}/test">
+      <fileset dir="test">
+        <include name="**/*"/>
+      </fileset>
+    </copy>
+    <copy toDir="${maven.dist.src.assembly.dir}/conf">
+      <fileset dir="conf">
+        <include name="**/*"/>
+      </fileset>
+    </copy>
+    <copy toDir="${maven.dist.src.assembly.dir}/xdocs">
+      <fileset dir="xdocs">
+        <include name="**/*"/>
+      </fileset>
+    </copy>
+  </postGoal>
+
+  <postGoal name="dist:prepare-bin-filesystem">
+    <copy toDir="${maven.dist.bin.assembly.dir}">
+      <fileset dir=".">
+        <include name="remotemqsc.bat"/>
+        <include name="remotemqsc.sh"/>
+      </fileset>
+    </copy>
+  </postGoal>
+
+</project>
